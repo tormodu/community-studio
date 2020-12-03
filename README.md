@@ -1,6 +1,6 @@
 # Sanity Community Management Studio with Slack integration
 
-[🙋🏻‍♀️ Join the Sanity.io community](https://slack.sanity.io)
+[🙋🏻‍♀️ Join the Sanity.io community](https://slack.sanity.io) 
 
 This repository contains both the studio and the services for Sanity‘s community bot. It makes it possible for the Sanity team to mark questions in the community slack with a 🎫 emoji to create a ticket and track conversations in threads, and the ✅ to resolve it. By tagging tickets, this studio also works as a knowledge base to help community managers to find answers, and get insight to documentation improvements, feature requests, bug reports and so on.
 
