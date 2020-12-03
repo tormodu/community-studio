@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <title>Log in to your Sanity account</title>
+  </head>
+  <body>
+    <p>Waiting for you to login to your Sanity account.</p>
+    <script>
+      function generateRandomString() {
+        const rand = Math.floor(Math.random() * 10)
+        let randStr = ''
+
+        for (let i = 0; i < 20 + rand; i++) {
+          randStr += String.fromCharCode(33 + Math.floor(Math.random() * 94))
+        }
+
+        return randStr
+      }
+
+      window.onload = () => {
+        const randStr = generateRandomString()
+
+        document.cookie =
+          `state=${encodeURIComponent(randStr)}; max-age=3600; path=/; samesite=lax`
+
+        let params = new URLSearchParams({
+          response_type: 'code',
+          redirect_uri: 'https://community.sanity.tools/api/callback',
+          client_id: 'oc-865e032cb74f',
+          state: btoa(randStr)
+        })
+
+        const authUrl = `https://api.sanity.io/v1/auth/oauth/authorize?${params.toString()}`
+
+        window.location.replace(authUrl)
+      }
+    </script>
+  </body>
+</html>
